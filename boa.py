@@ -228,7 +228,7 @@ def BOA(device, filepath: str, model):
                         e = min(s + chunk_len, total_size)
                         sl = mm[s:e]
                         # Torch tensor on CPU; GPU transfer handled inside compress() call
-                        t = torch.from_numpy(np.ascontiguousarray(sl)).unsqueeze(0)
+                        t = torch.from_numpy(np.array(sl)).unsqueeze(0)
                         x_list.append(t)
                         Ls_batch.append(int(e - s))
 

@@ -9,6 +9,7 @@ import torch
 from tqdm import tqdm
 
 from model import BoaConstrictor, ByteDataloader, make_splits
+from models import create_model, list_models
 from boa import BOA
 from train import train
 
@@ -182,6 +183,7 @@ def main():
     batch_size = config.get('dataloader', {}).get('batch_size', 3)
     d_model = config.get('model', {}).get('d_model', 256)
     num_layers = config.get('model', {}).get('num_layers', 8)
+    architecture = config.get('model', {}).get('architecture', 'mamba')
     lr = float(config.get('training', {}).get('lr', 5e-4))
     num_epochs = config.get('training', {}).get('epochs', 50)
     use_vocab_subset = config.get('use_vocab_subset', False)
@@ -244,7 +246,8 @@ def main():
     exp_dir.mkdir(parents=True, exist_ok=True)
 
     # Setup model, dataloaders, optimizer, loss
-    model = BoaConstrictor(d_model=d_model, num_layers=num_layers, vocab_size=vocab_size, device=device)
+    print(f"Architecture: {architecture}  (available: {', '.join(list_models())})")
+    model = create_model(architecture, d_model=d_model, num_layers=num_layers, vocab_size=vocab_size, device=device)
 
     dataloader = ByteDataloader(data_bytes, seq_len=seq_len, batch_size=batch_size, device=device)
 

@@ -37,3 +37,5 @@ experiments/cfd_experiment/*
 !experiments/cfd_experiment/download_cfd.py
 !experiments/cfd_experiment/README.md
 !experiments/cfd_experiment/cfd_experiment.yaml
+
+benchmark_workspace/

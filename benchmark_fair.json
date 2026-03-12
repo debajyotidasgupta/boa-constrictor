@@ -1,0 +1,158 @@
+{
+  "data_file": "experiments/cms_experiment/CMS_DATA_float32.bin",
+  "data_size_bytes": 49920000,
+  "device": "cuda",
+  "timestamp": "2026-03-12 10:18:30",
+  "baselines": [
+    {
+      "name": "LZMA",
+      "compressed_bytes": 15489644,
+      "ratio": 3.2227984064708006,
+      "time_s": 25.924518333747983
+    },
+    {
+      "name": "ZLIB",
+      "compressed_bytes": 19463909,
+      "ratio": 2.5647468861470735,
+      "time_s": 16.95408894587308
+    }
+  ],
+  "results": {
+    "mamba": {
+      "model": {
+        "architecture": "mamba",
+        "d_model": 64,
+        "num_layers": 2,
+        "param_count": 169152,
+        "memory_mb": 0.645263671875
+      },
+      "training": {
+        "train_bpb": 1.9472998777397328,
+        "val_bpb": 2.0664754773200755,
+        "test_bpb": 2.0630463498605187,
+        "train_time_s": 201.6535076694563,
+        "steps_per_sec": 193.40104940761802,
+        "epochs": 2
+      },
+      "compression": {
+        "original_bytes": 49920000,
+        "compressed_bytes": 12958916,
+        "ratio": 3.85217405529907,
+        "bpb": 2.076749358974359,
+        "compress_time_s": 263.0482408180833,
+        "decompress_time_s": 292.7150004543364,
+        "compress_throughput_mbs": 0.18098361626346685,
+        "decompress_throughput_mbs": 0.1626408684252817,
+        "lossless_verified": true
+      },
+      "latency": {
+        "init_stream_us": 23.653730750083923,
+        "step_mean_us": 1086.944106646115,
+        "step_p50_us": 1074.9530047178268,
+        "step_p99_us": 1504.7253575175898
+      }
+    },
+    "transformer": {
+      "model": {
+        "architecture": "transformer",
+        "d_model": 64,
+        "num_layers": 2,
+        "param_count": 4331584,
+        "memory_mb": 16.523681640625
+      },
+      "training": {
+        "train_bpb": 2.047233664693934,
+        "val_bpb": 2.173027230426655,
+        "test_bpb": 2.1692639139106094,
+        "train_time_s": 265.32329035177827,
+        "steps_per_sec": 146.9904882767432,
+        "epochs": 2
+      },
+      "compression": {
+        "original_bytes": 49920000,
+        "compressed_bytes": 25575808,
+        "ratio": 1.9518444930459284,
+        "bpb": 4.09868717948718,
+        "compress_time_s": 380.5533919148147,
+        "decompress_time_s": 413.5230980999768,
+        "compress_throughput_mbs": 0.12510050596436864,
+        "decompress_throughput_mbs": 0.11512639098938564,
+        "lossless_verified": true
+      },
+      "latency": {
+        "init_stream_us": 26.40858292579651,
+        "step_mean_us": 1033.9788968849462,
+        "step_p50_us": 1017.2105394303799,
+        "step_p99_us": 1901.88162960112
+      }
+    },
+    "gru": {
+      "model": {
+        "architecture": "gru",
+        "d_model": 64,
+        "num_layers": 2,
+        "param_count": 153792,
+        "memory_mb": 0.586669921875
+      },
+      "training": {
+        "train_bpb": 1.9703250870198965,
+        "val_bpb": 2.0954272232866926,
+        "test_bpb": 2.0919609001640165,
+        "train_time_s": 160.73991208150983,
+        "steps_per_sec": 242.62797891928318,
+        "epochs": 2
+      },
+      "compression": {
+        "original_bytes": 49920000,
+        "compressed_bytes": 13149228,
+        "ratio": 3.7964205959467736,
+        "bpb": 2.107248076923077,
+        "compress_time_s": 160.56806418858469,
+        "decompress_time_s": 184.38244293816388,
+        "compress_throughput_mbs": 0.29649371508325484,
+        "decompress_throughput_mbs": 0.2581993226489902,
+        "lossless_verified": true
+      },
+      "latency": {
+        "init_stream_us": 54.902397096157074,
+        "step_mean_us": 580.0381259177811,
+        "step_p50_us": 577.759463340044,
+        "step_p99_us": 600.2773530781269
+      }
+    },
+    "conv": {
+      "model": {
+        "architecture": "conv",
+        "d_model": 64,
+        "num_layers": 2,
+        "param_count": 95296,
+        "memory_mb": 0.363525390625
+      },
+      "training": {
+        "train_bpb": 2.438694383212428,
+        "val_bpb": 2.588904966888723,
+        "test_bpb": 2.584710668993659,
+        "train_time_s": 99.98111799638718,
+        "steps_per_sec": 390.0736537213883,
+        "epochs": 2
+      },
+      "compression": {
+        "original_bytes": 49920000,
+        "compressed_bytes": 16260708,
+        "ratio": 3.069977026830566,
+        "bpb": 2.6058826923076923,
+        "compress_time_s": 884.8768978156149,
+        "decompress_time_s": 186.25263725593686,
+        "compress_throughput_mbs": 0.05380118069815417,
+        "decompress_throughput_mbs": 0.2556066994615535,
+        "lossless_verified": true
+      },
+      "latency": {
+        "init_stream_us": 62.92667239904404,
+        "step_mean_us": 595.2599094598554,
+        "step_p50_us": 589.3209017813206,
+        "step_p99_us": 618.4853613376616
+      }
+    }
+  }
+}
